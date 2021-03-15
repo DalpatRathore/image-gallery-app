@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 import ImageCard from "./components/ImageCard";
 import ImageSearch from "./components/ImageSearch";
 
@@ -19,7 +20,7 @@ function App() {
       .catch(err => console.log(err));
   }, [term]);
   return (
-    <div className="container max-auto">
+    <div className="bg-gradient-to-r from-pink-500 via-gray-100 to-yellow-400	 container mx-auto px-3 py-1">
       <ImageSearch searchText={text => setTerm(text)}></ImageSearch>
       {!isLoading && images.length === 0 && (
         <h1 className="text-6xl text-center mx-auto mt-32">No Images Found</h1>
@@ -28,12 +29,13 @@ function App() {
       {isLoading ? (
         <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-5">
           {images.map(image => (
             <ImageCard key={image.id} image={image}></ImageCard>
           ))}
         </div>
       )}
+      <Footer></Footer>
     </div>
   );
 }

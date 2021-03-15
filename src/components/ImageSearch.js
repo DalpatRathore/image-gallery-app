@@ -9,14 +9,15 @@ const ImageSearch = ({ searchText }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden my-10 mx-auto">
       <form onSubmit={onSubmit} className="w-full mx-w-sm">
-        <div className="flex items-center border-b border-b-2 border-green-500 py-2">
+        <div className="flex items-center border-b border-b-2 border-blue-500 py-2">
           <input
             type="text"
             onChange={e => setText(e.target.value)}
-            className="appearance-none bg-transparent border-none w-full text-gray-700 mer-3 py-1 px-1 leading-tigth focus:outline-none"
+            className="appearance-none bg-transparent border-none w-full text-black font-bold mr-2 py-1 px-1 leading-tigth focus:outline-none"
+            placeholder="Search Images"
           />
           <button
-            className="flex-shrink-0 bg-green-500 hover:bg-green-700 border-green-500 hover:border-green-700 text-sm border-4 text-white py-1 px-2 rounded"
+            className="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded focus:outline-none"
             type="submit"
           >
             Search
