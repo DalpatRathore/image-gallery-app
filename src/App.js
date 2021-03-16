@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import ImageCard from "./components/ImageCard";
 import ImageSearch from "./components/ImageSearch";
+import Loader from "./components/Loader";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -27,8 +28,9 @@ function App() {
       )}
 
       {isLoading ? (
-        <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
+        <Loader></Loader>
       ) : (
+        // <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
         <div className="grid grid-cols-3 gap-5">
           {images.map(image => (
             <ImageCard key={image.id} image={image}></ImageCard>
